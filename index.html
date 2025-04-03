@@ -82,6 +82,27 @@ img {vertical-align: middle;}
             <a href="contact.html">ContactUs</a>
         </nav>           
     </header>
+    
+  
+  <script>
+      var myvideo = document.getElementById("myvideo");
+      var myaudio = document.getElementById("myaudio");
+  
+      var change_time_state = true;
+  
+      myvideo.onplay = function(){
+          myaudio.play();
+          if(change_time_state){
+              myaudio.currentTime = myvideo.currentTime;
+              change_time_state = false;
+          }
+      }
+  
+      myvideo.onpause = function(){
+          myaudio.pause();
+          change_time_state = true;
+      }
+  </script>
     <div class="container">
     
     <div id="arrange">
@@ -95,6 +116,13 @@ img {vertical-align: middle;}
         <p>Edited By: <span>Subha</span></p>
         <section class="box"> 
         <h2>Audio of story</h2>
+        <!--<video id="myvideo" controls muted loop>
+          <source src="./video (1080p).mp4" type="video/mp4" height="100px" width="100px"/>
+          <audio id="myaudio">
+              <source src="welcome.mp3" type="audio/mpeg"/>
+          </audio>
+      </video>-->
+        
 <div class="slideshow-container">
 
 <div class="mySlides fade">
@@ -129,11 +157,19 @@ img {vertical-align: middle;}
     <img src="./girl with bird.jpg" style="width:50%">
     <div class="text">Caption six</div>
   </div>
-  <audio controls>
-            
-    <source src="./welcome.mp3" type="audio/mpeg">
-
-  </audio>
+  
+  <div style="text-align:center">
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span>
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+    <span class="dot"></span> 
+  </div>
+  <audio controls id="myaudio">
+    <source src="welcome.mp3" type="audio/mpeg"/>
+</audio>
+  
 </section>
 
             <div>
@@ -141,13 +177,15 @@ img {vertical-align: middle;}
                 <img  id="daughter" src="./toddler.avif"/>
             </div>
             <p>
+                
                       Once upon a time, there was a photographer who lived in London.
                       He was a excellent photographer and took many amazing pictures.
                       One day,his daughter, Gloria was looking through her dad's photos.
                       Gloria,who was the daughter of Paul, the photographer,said to her dad,"Dad I also want to be a photographer like you".
-            </p>
+           </p>
             <img src="./A girl with camara.jpg" height="500px" width="500px">
             <P>
+                
                 As the years passed, twenty years later,Gloria grew into a beautiful young woman. 
                 Just as expected,she became a photographer. 
                 One day she traveled to a resort in the Maldives.
@@ -163,13 +201,15 @@ img {vertical-align: middle;}
             </p> 
             <img src="./pelican tied on rope.webp" height="300px" width="300px">
             <p>
+                
                 Seeing the pelican wasn't cooperating, Gloria decided to move closer to the Bird.
                 She slowly approached it and tied one of the pelican's leg with a rope to keep it in place. 
                 Then she tried to take a photo with the pelican, but the bird was still not cooperating. 
                 It kept moving, squawking and frustrating her. Gloria became tired and frustrated. 
                 She started yelling at the bird  in anger, but that didn't help.
             </p>
-            <P>Frustrated,She dropped the camera and sat on the swing.
+            <P>
+                Frustrated,She dropped the camera and sat on the swing.
                 Just then the phone rang. It was her dad calling. Gloria explained the difficulties she was having with the pelican.
                 Her dad,paul, listened patiently and then said, "Gloria, birds are living creature just like us. They can't speak to us.But they have feelings.
                 if you show your anger they won't cooperate. Instead, try showing kindness". 
@@ -178,6 +218,7 @@ img {vertical-align: middle;}
             </p>
             <img src="./girl with bird.jpg" height="500px" width="500px">
             <p>
+                
                 Surprisingly after five miniutes later, the pelican flew back and perched on her shoulder. 
                 Gloria was overjoyed! Now the pelican was calm and cooperated with her.
                 They took many beautiful pictures together, and the pelican and Gloria became friends.
@@ -216,14 +257,7 @@ img {vertical-align: middle;}
 </div>
 <br>
 
-<div style="text-align:center">
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-  <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-    <span class="dot"></span> 
-</div>
+
 
 <script>
 let slideIndex = 0;
