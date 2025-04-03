@@ -3,9 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="kvIiD6nzbqvwvee5xfW0CXBOcH62s9jhAEiLWbfsgYU" />
     <link rel="stylesheet" href="stile.css">
     <title>The Photographer And His Daughter</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script src="slideshow.js"></script>
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 1.5s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
 </head>
 <body>
     <header >
@@ -27,7 +93,49 @@
         <p>Auther Of The Story: <span>JaiannahJones</span></p>
         <p>Illustrated By: <span>NicelinJones</span></p>
         <p>Edited By: <span>Subha</span></p>
-        <section> 
+        <section class="box"> 
+        <h2>Audio of story</h2>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 6</div>
+  <img src="./cameraman.jpg" style="width:50%">
+  <div class="text">Caption one</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 6</div>
+  <img src="./toddler.avif" style="width:50%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 6</div>
+  <img src="./A girl with camara.jpg" style="width:50%">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+    <div class="numbertext">4 / 6</div>
+    <img src="./pelican.webp" style="width:50%">
+    <div class="text">Caption four</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">5/ 6</div>
+    <img src="./pelican tied on rope.webp" style="width:50%">
+    <div class="text">Caption five</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 6</div>
+    <img src="./girl with bird.jpg" style="width:50%">
+    <div class="text">Caption six</div>
+  </div>
+  <audio controls>
+            
+    <source src="./welcome.mp3" type="audio/mpeg">
+
+  </audio>
+</section>
+
             <div>
                 <img id="daddy" src="./cameraman.jpg" height="100px" width="100px"/>
                 <img  id="daughter" src="./toddler.avif"/>
@@ -86,14 +194,61 @@
                 "The love Beareth all things, Believeth all things, Hopeth all things, Endureth all things."
                                               1 corinthians 13:8  
             </blockquote>
+            
+            
+            
+            
         </section>
     </div>
 </div>
         
 </div>
+
+<py-script src="./textspeech.py"></py-script>
+
+
+</head>
+<body>
+
+
+  
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides,15000); // Change image every 10 seconds
+}
+</script> 
+
+
 <footer>
     Copyright@2024KidsStories.All Right Reserved.
 </footer>
+
     
 </body>
 </html>

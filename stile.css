@@ -109,7 +109,15 @@ span{
             font-size: small;
             cursor: pointer;
         }
-    
+        * {box-sizing:border-box}
+
+.box{
+    border:2px solid;
+    border-radius: 5px;
+    width:50%;
+    margin: auto;
+
+}
         
         footer {
             background-color:blue;
