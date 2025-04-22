@@ -118,6 +118,10 @@ span{
     margin: auto;
 
 }
+.vcur{
+    width: 100px;
+    height: 100px;
+}
         
         footer {
             background-color:blue;
